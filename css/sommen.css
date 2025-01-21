@@ -1,0 +1,65 @@
+.punten
+{
+	float:right;
+	padding:10px;
+	font-family: 'Caveat Brush', cursive;
+	color:#fff;
+	text-align:center;
+	text-shadow:1px 1px 0px rgba(0,0,0,1),1px -1px 0px rgba(0,0,0,1),-1px 1px 0px rgba(0,0,0,1),-1px -1px 0px rgba(0,0,0,1),1px 1px 3px rgba(0,0,0,1);
+	font-size:30px;
+}
+
+.som
+{
+	width:100%;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-family: 'Caveat Brush', cursive;
+	color:#fff;
+	text-align:center;
+	text-shadow:1px 1px 0px rgba(0,0,0,1),1px -1px 0px rgba(0,0,0,1),-1px 1px 0px rgba(0,0,0,1),-1px -1px 0px rgba(0,0,0,1),1px 1px 3px rgba(0,0,0,1);
+	font-size:100px;
+}
+
+.som.goed
+{
+	color:rgba(100,200,100,1);
+}
+
+.som.fout
+{
+	color:rgba(200,100,100,1);
+}
+
+.antwoord
+{
+	border:none;
+	text-shadow:1px 1px 0px rgba(0,0,0,1),1px -1px 0px rgba(0,0,0,1),-1px 1px 0px rgba(0,0,0,1),-1px -1px 0px rgba(0,0,0,1),1px 1px 3px rgba(0,0,0,1);
+	font-size:50px;
+	padding:10px;
+	width:300px;
+	height:105px;
+	border-radius:5px;
+	border:2px solid rgba(0,0,0,0.6);
+	background-color:rgba(255,255,255,0.5);
+	line-height:50px;
+	font-family: 'Caveat Brush', cursive;
+	color:#fff;
+	text-align:center;
+}
+
+.antwoord_button
+{
+	width:180px;
+	height:105px;
+	cursor:pointer;
+	border-radius:5px;
+	font-family: 'Caveat Brush', cursive;
+	border:2px solid rgba(0,0,0,0.6);
+	background-color:rgba(100,150,100,0.5);
+	text-shadow:1px 1px 0px rgba(0,0,0,1),1px -1px 0px rgba(0,0,0,1),-1px 1px 0px rgba(0,0,0,1),-1px -1px 0px rgba(0,0,0,1),1px 1px 3px rgba(0,0,0,1);
+	font-size:50px;
+	color:#ccc;
+	box-shadow:inset 0px 60px 0px -10px rgba(255,255,255,0.2), inset 0px -10px 15px -10px rgba(0,0,0,0.5);
+	line-height:50px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"> 
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="js/functions/general.js"></script>
+	<script src="js/data/config.js?v=1.11111"></script>
+	<script src="js/data/ouau.js?v=1.11111"></script>
+	<script src="js/data/eiij.js?v=1.11111"></script>
+	<script src="js/localstorage.js?v=1.11111"></script>
+	<script src="js/sommen.js?v=1.11111"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css?v=1.11111">
+	<link rel="stylesheet" type="text/css" href="css/sommen.css?v=1.11111">
+	<link rel="stylesheet" href="js/lib/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+	<div class="main_window">
+		<div class="paper_bg"></div>
+		<div id="content_home" class="page_container active">
+			<div class="home_section">
+				<!-- <button class="menu_button slim" data-target-content="reset">Reset</button> -->
+				<!-- <button class="menu_button slim" onclick="new_som()">Nieuw</button> -->
+				<button class="menu_button slim" onclick="type_sommen=0;new_som()">Alles</button>
+				<button class="menu_button slim" onclick="type_sommen=1;new_som()">+</button>
+				<button class="menu_button slim" onclick="type_sommen=2;new_som()">-</button>
+				<button class="menu_button slim" onclick="type_sommen=3;new_som()">x</button>
+				<button class="menu_button slim" onclick="type_sommen=4;new_som()">:</button>
+				<button class="menu_button slim" onclick="type_sommen=5;new_som()">ou au</button>
+				<button class="menu_button slim" onclick="type_sommen=6;new_som()">ei ij</button>
+				<div class="punten"></div>
+			</div>
+			<div class="home_devider"></div>
+			<div class="home_section" style="text-align:center;">
+				<div class="som"></div><br/>
+				<input class="antwoord" onkeyup="reset_goed_fout()"></input>
+				<button class="antwoord_button" onclick="check_som()">></button>
+			</div>
+		</div>
+		<div id="content_reset" class="page_container">
+			<button class="menu_button slim" data-target-content="home">Back</button>
+			<div class="home_devider">Reset game (there will be no confirmation)</div>
+			<div class="home_section">
+				<button class="menu_button danger" onclick="clearLocalStorage();location.reload();">RESET</button>
+			</div>
+		</div>
+		<div class="detail_overlay">
+			<div class="card_detail"></div>
+		</div>
+	</div>
+</body>
+<script>
+
+	var gamedata = loadLocalStorage();
+
+	$(document).ready(function() {
+		$('body').on('click', '.menu_button', function() {
+		    $('.menu_button.active').removeClass('active');
+			$(this).addClass('active');
+			show_content($(this).attr('data-target-content'));
+		});
+	});
+	function show_content(content_id){
+		//console.log(content_id);
+		if(content_id == undefined){content_id = 'home';}
+		$('.page_container.active').removeClass('active');
+		$('#content_' + content_id).addClass('active');
+
+		var possible_extra_function = window['show_' + content_id]; 
+		if (typeof possible_extra_function === "function") possible_extra_function();
+	};
+
+	$('.detail_overlay').click(function(){
+		$('.detail_overlay').html('');
+		$('.detail_overlay').fadeOut();
+	});
+
+	function show_home(){check_sommen();};
+
+	show_home();
+
+</script>
+</html>
+
