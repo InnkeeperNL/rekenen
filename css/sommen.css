@@ -1,3 +1,14 @@
+.som_teller
+{
+	float:left;
+	padding:10px;
+	font-family: 'Caveat Brush', cursive;
+	color:#fff;
+	text-align:center;
+	text-shadow:1px 1px 0px rgba(0,0,0,1),1px -1px 0px rgba(0,0,0,1),-1px 1px 0px rgba(0,0,0,1),-1px -1px 0px rgba(0,0,0,1),1px 1px 3px rgba(0,0,0,1);
+	font-size:30px;
+}
+
 .punten
 {
 	float:right;
@@ -9,6 +20,8 @@
 	font-size:30px;
 }
 
+.highscore,
+.uitslag_punten,
 .som
 {
 	width:100%;
@@ -62,4 +75,14 @@
 	color:#ccc;
 	box-shadow:inset 0px 60px 0px -10px rgba(255,255,255,0.2), inset 0px -10px 15px -10px rgba(0,0,0,0.5);
 	line-height:50px;
+}
+
+.difficulty_bar
+{
+	text-align: center;
+}
+
+.difficulty_bar .menu_button
+{
+	float: none;
 }

@@ -146,3 +146,24 @@ function nFormatter(num, digits) {
   }
   return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
 }
+
+function get_percent_color(var_1, var_2){
+  var percent = Math.floor(var_1 / var_2 * 100);
+  var red = Math.floor(400 - (percent * 2.5));
+  var green = Math.floor(150 + (percent * 1));
+  if(green < 150){green = 150;}
+  var color = 'rgba(' + red + ',' + green + ',150,0.7)';
+  if(var_1 == 0)
+  {
+    color = 'rgba(250,50,50,1)';
+  }
+  if(var_1 >= var_2)
+  {
+    color = 'rgba(100,220,100,1)';
+  }
+  return color;
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}

@@ -17,6 +17,7 @@ function loadLocalStorage(){
 	if(gamedata['punten'] == undefined)
 	{
 		gamedata['punten'] = 0;
+		gamedata['highscore'] = 0;
 		saveToLocalStorage();
 	}
 

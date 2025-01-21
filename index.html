@@ -19,17 +19,20 @@
 <body>
 	<div class="main_window">
 		<div class="paper_bg"></div>
-		<div id="content_home" class="page_container active">
+		<div id="content_home" class="page_container">
 			<div class="home_section">
 				<!-- <button class="menu_button slim" data-target-content="reset">Reset</button> -->
 				<!-- <button class="menu_button slim" onclick="new_som()">Nieuw</button> -->
-				<button class="menu_button slim" onclick="type_sommen=0;new_som()">Alles</button>
+				<!-- <button class="menu_button slim" onclick="type_sommen=0;new_som()">Alles</button>
 				<button class="menu_button slim" onclick="type_sommen=1;new_som()">+</button>
 				<button class="menu_button slim" onclick="type_sommen=2;new_som()">-</button>
 				<button class="menu_button slim" onclick="type_sommen=3;new_som()">x</button>
 				<button class="menu_button slim" onclick="type_sommen=4;new_som()">:</button>
 				<button class="menu_button slim" onclick="type_sommen=5;new_som()">ou au</button>
-				<button class="menu_button slim" onclick="type_sommen=6;new_som()">ei ij</button>
+				<button class="menu_button slim" onclick="type_sommen=6;new_som()">ei ij</button> -->
+				<button class="menu_button slim" data-target-content="set_difficulty">Nieuw</button>
+				
+				<div class="som_teller"></div>
 				<div class="punten"></div>
 			</div>
 			<div class="home_devider"></div>
@@ -39,8 +42,27 @@
 				<button class="antwoord_button" onclick="check_som()">></button>
 			</div>
 		</div>
+		<div id="content_set_difficulty" class="page_container active">
+			<div class="home_section difficulty_bar">
+				<button class="menu_button slim" onclick="difficuly=1;reset_score();new_som()" data-target-content='home'>Easy</button>
+				<button class="menu_button slim" onclick="difficuly=2;reset_score();new_som()" data-target-content='home'>Medium</button>
+				<button class="menu_button slim" onclick="difficuly=3;reset_score();new_som()" data-target-content='home'>Hard</button>
+				<button class="menu_button slim" onclick="difficuly=4;reset_score();new_som()" data-target-content='home'>Ultra</button>
+			</div>
+			<div class="home_section">
+				<div class="highscore"></div>
+			</div>
+		</div>
+		<div id="content_uitslag" class="page_container">
+			<div class="home_section">
+				<button class="menu_button slim" data-target-content="set_difficulty">Nieuw</button>
+			</div>
+			<div class="home_section" style="text-align:center;">
+				<div class="uitslag_punten"></div>
+			</div>
+		</div>
 		<div id="content_reset" class="page_container">
-			<button class="menu_button slim" data-target-content="home">Back</button>
+			<button class="menu_button slim">Back</button>
 			<div class="home_devider">Reset game (there will be no confirmation)</div>
 			<div class="home_section">
 				<button class="menu_button danger" onclick="clearLocalStorage();location.reload();">RESET</button>
@@ -79,7 +101,8 @@
 
 	function show_home(){check_sommen();};
 
-	show_home();
+	show_set_difficulty();
+	//show_home();
 
 </script>
 </html>
